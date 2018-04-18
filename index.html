@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+  <!-- w3.css package-->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  
+  <title>Thrive | Welcome</title>
+</head>
+<style>
+body {
+  background-color: #CCCED0;
+  color: black;
+}  
+
+h1 {
+  cursor: pointer;
+}
+
+</style>
+
+<body>
+
+  <!-- Navigation -->
+    <div class="w3-top">
+      <div class="w3-bar w3-white w3-wide w3-padding w3-card w3-opacity-min ">
+        <a href="#home" class="w3-bar-item w3-btn">Thrive Global</a>
+        <div class="w3-right w3-hide-small w3-text-black">
+         <a href="#About" class="w3-bar-item w3-btn ">About</a>
+         <a href="#contact" class="w3-bar-item w3-btn ">Contact</a>
+        </div>
+      </div>
+    </div>
+
+  <!-- Header Img -->
+    <header class=" w3-content w3-center" style="max-width: 2000px;" id="home">
+      <img class="w3-greyscale" src="https://images.adsttc.com/media/images/58da/42ee/e58e/cefa/a700/0149/large_jpg/One_North_Exteriors_Phase2-005.jpg?1490698980" width="2000" height="975">
+      <div class="w3-display-middle w3-margin-top w3-center">
+        <h1 class="w3-xxlarge"><span id="click" onclick="clickFunction()" class="w3-padding w3-black w3-opacity-min"><b>Thrive</b></span><span class="w3-hide-small w3-text-black">Global</span></h1>
+      </div>
+    </header>
+
+
+    <!-- page content ruler-->
+    <div class="w3-content w3-padding" style="max-width:1564px">
+
+
+    <!-- About -->
+    <div class="w3-container w3-padding" id="About">
+      <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h2>
+      <p>Thrive Global is a community that has come together to help others succeed in the careers that they desire. Thrive helps with loans, expenses, and guidance in the career path and field that each individual desires. This is a non-profit organization. Donations are very appreciated and all proceeds go toward helping individuals achieve their goals and aspirations.<p>
+    </div>
+
+    <div class="w3-display-container w3-content w3-center w3-greyscale w3-card w3-padding w3-light-gray" style="max-width: 1500px">
+      <img src="https://quotefancy.com/media/wallpaper/3840x2160/1236473-Sam-Waterston-Quote-If-you-re-not-moving-forward-you-re-falling.jpg" width="800" height="500">
+    </div>
+
+    <hr>
+
+    <!-- Contact -->
+    <div class="w3-container w3-card w3-light-gray" style="padding:128px 16px" id="contact">
+  <h3 class="w3-center">CONTACT</h3>
+  <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-half">
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Charleston, WV</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +1 555 555 5555</p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
+      <br>
+        <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+        <p>
+          <button class="w3-button w3-black" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </p>
+    
+    </div>
+    <div class="w3-half">
+      <!-- Add Google Maps API -->
+      <div id="googleMap" style="width:100%;height:510px;"></div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- Footer -->
+
+<footer class="w3-center w3-black w3-padding-16 w3-card w3-bar" >
+  <p>Created By <a href="#contact" class="w3-hover-text-white">Justin Browning</a></p>
+</footer>
+
+
+
+
+<!-- Google Maps API,  -->
+
+
+  <script>
+
+var showingThrive = true;
+
+function myMap()
+{
+  myCenter=new google.maps.LatLng(38.352396, -81.633185); 
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: true, draggable: true,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+
+// Click function
+function clickFunction() {
+  if (showingThrive) {
+    var t = "Make Your Future";
+    document.getElementById("click").innerHTML = t;
+    showingThrive = false;
+  } else {
+    var t = "Thrive";
+    document.getElementById("click").innerHTML = t;
+    showingThrive = true;
+  }
+}
+
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCMyXqeGnPg7gPzfn8seVeJ23UCXLPdBE&callback=myMap"></script>  
+</body>
+</html>
